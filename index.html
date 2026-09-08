@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atlas — Strategic Simulator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=16" />
+  <style>
+    .rank-row.selected,.rank-row.selected:hover{background:#245cff;color:#fff}
+    .rank-row.selected .rank,.rank-row.selected strong,.rank-row.selected b{color:#fff}
+    .rank-row.selected .rank-bar{background:#6f94ff}.rank-row.selected .rank-bar i{background:#fff}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">A</span> ATLAS <small>STRATEGIC SIMULATOR</small></a>
+    <div class="top-actions">
+      <button id="resetBtn" class="quiet">Reset scenario</button><button id="simulateBtn" class="simulate">Simulate <span>↗</span></button></div>
+  </header>
+
+  <main>
+    <aside class="left-panel">
+      <div class="eyebrow"><span></span> World scenario</div>
+      <h1>Balance of<br><em>power.</em></h1>
+      <p class="intro">Tune a country’s strategic position, then run a fast, outcome-based global conflict simulation.</p>
+      <div class="section-title">SELECTED COUNTRY</div>
+      <div id="countryCard" class="country-card empty">
+        <div class="flag-wrap"><span id="countryFlag">◎</span></div>
+        <div><strong id="countryName">Select a country</strong><small id="countryMeta">Hover the map to inspect</small></div>
+      </div>
+      <div id="controls" class="controls is-disabled">
+        <div class="control-head"><label>Military</label><output id="militaryOut">0</output></div><input id="military" type="range" min="0" max="100" value="0">
+        <div class="control-head"><label>Economy</label><output id="economyOut">0</output></div><input id="economy" type="range" min="0" max="100" value="0">
+        <div class="control-head"><label>Resilience</label><output id="resilienceOut">0</output></div><input id="resilience" type="range" min="0" max="100" value="0">
+        <div class="control-head"><label>Technology</label><output id="technologyOut">0</output></div><input id="technology" type="range" min="0" max="100" value="0">
+        <div class="control-head"><label>Foreign support</label><output id="supportOut">0</output></div><input id="support" type="range" min="0" max="100" value="0">
+      </div>
+      <div class="power-readout"><span>COMPOSITE POWER</span><strong id="powerScore">—</strong><i>/100</i></div>
+      <div class="note">Educational fiction · outcomes use relative scenario scores, not real-world predictions.</div>
+    </aside>
+
+    <section class="map-area">
+      <div class="map-head"><div><span class="status-dot"></span> LIVE SCENARIO <b id="scenarioLabel">— PEACETIME</b></div><div class="map-help">Hover to inspect · Click to edit</div></div>
+      <div class="map-toolbar" aria-label="Simulation and map controls">
+        <div class="toolbar-group"><span>SIM SPEED</span><input id="speed" aria-label="Simulation speed" type="range" min="1" max="5" value="3"><output id="speedOut">3×</output></div>
+        <div class="toolbar-group"><button id="pauseBtn" disabled>Pause</button><button id="skipBtn" disabled>Skip to end</button></div>
+        <div class="toolbar-group zoom-tools"><button id="zoomOut" aria-label="Zoom out">−</button><button id="zoomReset">Reset view</button><button id="zoomIn" aria-label="Zoom in">+</button><button id="mapFullscreen" aria-label="Expand map" aria-pressed="false" title="Expand map">⛶</button></div>
+      </div>
+      <div id="mapWrap"><svg id="map" aria-label="Interactive world map"></svg><div id="tooltip" class="tooltip" role="tooltip"></div><div id="battleFeed" class="battle-feed"></div></div>
+      <div class="map-foot"><span id="mapTerritories">World territories</span><span>Mercator projection</span><span id="territoryCount">0 controlled territories</span></div>
+    </section>
+
+    <aside class="right-panel">
+      <div class="section-title">WORLD RANKING <span>POWER</span></div>
+      <div id="ranking" class="ranking"></div>
+      <div class="legend"><div><i class="swatch neutral"></i>Independent</div><div><i class="swatch selected"></i>Selected</div><div><i class="swatch conquest"></i>Conquest</div></div>
+      <div class="simulation-info"><span>SIMULATION MODEL</span><p>Adjacent rivals engage first. The stronger composite power absorbs the other territory.</p></div>
+    </aside>
+  </main>
+  <div id="toast" class="toast"></div>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+  <script src="app.js?v=16"></script>
+</body>
+</html>
