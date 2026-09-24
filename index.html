@@ -44,13 +44,13 @@
     </aside>
 
     <section class="map-area">
-      <div class="map-head"><div><span class="status-dot"></span> LIVE SCENARIO <b id="scenarioLabel">— PEACETIME</b></div><div class="map-help">Double-click country rows to track · Click map to edit</div></div>
+      <div class="map-head"><div><span class="status-dot"></span> LIVE SCENARIO <b id="scenarioLabel">— PEACETIME</b></div><div class="map-help">During conflict: hold a country, drag to a red target, release to attack</div></div>
       <div class="map-toolbar" aria-label="Simulation and map controls">
         <div class="toolbar-group"><span>SIM SPEED</span><input id="speed" aria-label="Simulation speed" type="range" min="1" max="5" value="3"><output id="speedOut">3×</output></div>
         <div class="toolbar-group"><button id="pauseBtn" disabled>Pause</button><button id="skipBtn" disabled>Skip to end</button></div>
         <div class="toolbar-group zoom-tools"><button id="zoomOut" aria-label="Zoom out">−</button><button id="zoomReset">Reset view</button><button id="zoomIn" aria-label="Zoom in">+</button><button id="mapFullscreen" aria-label="Expand map" aria-pressed="false" title="Expand map">⛶</button></div>
       </div>
-      <div id="mapWrap"><svg id="map" aria-label="Interactive world map"></svg><div id="tooltip" class="tooltip" role="tooltip"></div><div id="fallNotice" class="fall-notice" role="status" aria-live="polite"></div><div id="nukeNotice" class="nuke-notice" role="status" aria-live="polite"></div><div id="battleFeed" class="battle-feed"></div></div>
+      <div id="mapWrap"><svg id="map" aria-label="Interactive world map. During a simulation, press and drag from one country to another to launch an attack."></svg><div id="tooltip" class="tooltip" role="tooltip"></div><div id="fallNotice" class="fall-notice" role="status" aria-live="polite"></div><div id="nukeNotice" class="nuke-notice" role="status" aria-live="polite"></div><div id="attackNotice" class="attack-notice" role="status" aria-live="polite"></div><div id="battleFeed" class="battle-feed"></div></div>
       <div class="map-foot"><span id="mapTerritories">World territories</span><span>Mercator projection</span><span id="territoryCount">0 controlled territories</span></div>
     </section>
 
