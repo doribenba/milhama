@@ -4,6 +4,8 @@ Milhama, מִלְחָמָה, is a beta strategy simulation game about watching a
 
 Choose a country, tune its strategic profile, and start a global conflict. From there, the core experience is to sit back and watch: countries compete, expand, lose territory, retaliate, and eventually leave one final power standing.
 
+<img width="3168" height="2032" alt="Screenshot 2026-09-27 at 11 59 48" src="https://github.com/user-attachments/assets/022e7eba-2057-4bde-8b5d-0158bfa12612" />
+
 ## What happens in a simulation
 
 Each country begins with a profile made up of military strength, economy, resilience, technology, foreign support, and, for selected countries, nuclear weapons. These values combine into a relative power score that influences the outcome of conflicts.
