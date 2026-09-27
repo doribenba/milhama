@@ -1,6 +1,6 @@
-# Atlas
+# MILHAMA
 
-Atlas is a beta strategy simulation game about watching a fictional world order change in real time.
+Milhama, מִלְחָמָה, is a beta strategy simulation game about watching a fictional world order change in real time.
 
 Choose a country, tune its strategic profile, and start a global conflict. From there, the core experience is to sit back and watch: countries compete, expand, lose territory, retaliate, and eventually leave one final power standing.
 
