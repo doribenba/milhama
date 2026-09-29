@@ -47,7 +47,7 @@
       <div class="map-head"><div><span class="status-dot"></span> LIVE SCENARIO <b id="scenarioLabel">— PEACETIME</b></div><div id="mapHelp" class="map-help">Enable Experimental features for dynamic zoom and manual targeting</div></div>
       <div class="map-toolbar" aria-label="Simulation and map controls">
         <div class="toolbar-group"><span>SIM SPEED</span><input id="speed" aria-label="Simulation speed" type="range" min="1" max="5" value="3"><output id="speedOut">3×</output></div>
-        <div class="toolbar-group"><button id="pauseBtn" disabled>Pause</button><button id="experimentalBtn" aria-pressed="false" title="Enable dynamic zoom and manual targeting">Experimental: OFF</button><button id="defaultNukesBtn" aria-pressed="true" title="Toggle the starting nuclear stockpiles">Nukes: ON</button><button id="skipBtn" disabled>Skip to end</button></div>
+        <div class="toolbar-group"><button id="pauseBtn" disabled>Pause</button><button id="experimentalBtn" aria-pressed="false" title="Enable dynamic zoom and manual targeting">Experimental: OFF</button><button id="defaultNukesBtn" aria-pressed="true" title="Toggle the starting nuclear stockpiles">Nukes: ON</button><button id="saveBtn" class="quiet">Save</button><button id="loadBtn" class="quiet" disabled>Load checkpoint</button><button id="skipBtn" disabled>Skip to end</button></div>
         <div class="toolbar-group zoom-tools"><button id="zoomOut" aria-label="Zoom out">−</button><button id="zoomReset">Reset view</button><button id="zoomIn" aria-label="Zoom in">+</button><button id="mapFullscreen" aria-label="Expand map" aria-pressed="false" title="Expand map">⛶</button></div>
       </div>
       <div id="mapWrap"><svg id="map" aria-label="Interactive world map. During a simulation, press and drag from one country to another to launch an attack."></svg><div id="tooltip" class="tooltip" role="tooltip"></div><div id="fallNotice" class="fall-notice" role="status" aria-live="polite"></div><div id="nukeNotice" class="nuke-notice" role="status" aria-live="polite"></div><div id="attackNotice" class="attack-notice" role="status" aria-live="polite"></div><div id="battleFeed" class="battle-feed"></div></div>
@@ -63,6 +63,6 @@
   <div id="toast" class="toast"></div>
   <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
-  <script src="app.js?v=21"></script>
+  <script src="app.js?v=22"></script>
 </body>
 </html>
