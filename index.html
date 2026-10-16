@@ -7,12 +7,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=30" />
+  <link rel="stylesheet" href="style.css?v=33" />
   <link rel="shortcut icon" type="image/x-icon" href="favicon1.ico">
   <style>
     .rank-row.selected,.rank-row.selected:hover{background:#245cff;color:#fff}
     .rank-row.selected .rank,.rank-row.selected strong,.rank-row.selected b{color:#fff}
     .rank-row.selected .rank-bar{background:#6f94ff}.rank-row.selected .rank-bar i{background:#fff}
+    .alliance-presets{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:0 0 14px}.alliance-preset{border:1px solid #dcdcd6;background:#fafaf7;padding:7px 8px;text-align:left;color:#111214;font:600 9px 'DM Mono';cursor:pointer;transition:background .15s,border-color .15s,color .15s}.alliance-preset:hover{border-color:#999}.alliance-preset[aria-pressed="true"]{background:var(--preset-color,#111214);border-color:var(--preset-color,#111214);color:#fff}.alliance-preset small{display:block;margin-top:3px;font:400 8px 'DM Mono';opacity:.65}
   </style>
 </head>
 <body>
@@ -41,7 +42,7 @@
         <div class="control-head"><label>Nuclear weapons</label><output id="nuclearOut">0</output></div><input id="nuclear" type="range" min="0" max="3" value="0">
       </div>
       <div class="power-readout"><span>COMPOSITE POWER</span><strong id="powerScore">—</strong><i>/100</i></div>
-      <div class="note">Educational fiction · outcomes use relative scenario scores, not real-world predictions.</div>
+      <div class="note">Educational fiction · outcomes use relative scenario scores, not real-world predictions.<div style="border-top:1px solid var(--line); margin-top:10px; padding-top:10px;">Adjacent rivals engage first. The stronger composite power absorbs the other territory.</div></div>
     </aside>
 
     <section class="map-area">
@@ -52,19 +53,19 @@
         <div class="toolbar-group zoom-tools"><button id="zoomOut" aria-label="Zoom out">−</button><button id="zoomReset">Reset view</button><button id="zoomIn" aria-label="Zoom in">+</button><button id="mapFullscreen" aria-label="Expand map" aria-pressed="false" title="Expand map">⛶</button></div>
       </div>
       <div id="mapWrap"><svg id="map" aria-label="Interactive world map. During a simulation, hold a country to target an attack. With Experimental features on, Shift-drag between countries to form alliances."></svg><div id="tooltip" class="tooltip" role="tooltip"></div><div id="fallNotice" class="fall-notice" role="status" aria-live="polite"></div><div id="nukeNotice" class="nuke-notice" role="status" aria-live="polite"></div><div id="attackNotice" class="attack-notice" role="status" aria-live="polite"></div><div id="battleFeed" class="battle-feed"></div></div>
-      <div class="map-foot"><span id="mapTerritories">World territories</span><span>Mercator projection</span><span id="territoryCount">0 controlled territories</span></div>
     </section>
 
     <aside class="right-panel">
       <div class="section-title">WORLD RANKING <span>POWER</span></div>
       <div id="ranking" class="ranking"></div>
-      <div class="alliances-section"><div class="section-title">ALLIANCES <span>SHIFT-DRAG</span></div><div id="alliances" class="alliances"></div></div>
-      <div class="simulation-info"><span>SIMULATION MODEL</span><p>Adjacent rivals engage first. The stronger composite power absorbs the other territory.</p></div>
+      <div class="alliances-section"><div class="section-title">ALLIANCE PRESETS <span>TOGGLE</span></div><div id="alliancePresets" class="alliance-presets"></div><div class="section-title">ACTIVE ALLIANCES <span>SHIFT-DRAG</span></div><div id="alliances" class="alliances"></div></div>
     </aside>
+
+    <div class="map-foot"><span id="mapTerritories">World territories</span><span>Mercator projection</span><span id="territoryCount">0 controlled territories</span></div>
   </main>
   <div id="toast" class="toast"></div>
   <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
-  <script src="app.js?v=27"></script>
+  <script src="app.js?v=33"></script>
 </body>
 </html>
